@@ -1,0 +1,11 @@
+cmake_minimum_required(VERSION 3.10)
+project(pixel)
+set(CMAKE_CXX_STANDARD 11)
+find_package(OpenCV REQUIRED)
+MESSAGE("OpenCV Vesion : ${OpenCV_VERSION}")
+include_directories(${OpenCV_INCLUDE_DIRS})
+link_directories(${OpenCV_LIB_DIR})
+link_directories("/home/micang/anaconda3/envs/tf1/lib")
+add_executable(orb_cv
+        orb_cv.cpp)
+target_link_libraries(orb_cv ${OpenCV_LIBS})
